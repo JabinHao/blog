@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- 写入 base.html 中定义的 title -->
+{% block title %}首页{% endblock title %}
+
+<!-- 写入 base.html 中定义的 content -->
+{% block content %}
+
+<!-- 定义放置文章标题的div容器 -->
+<div class="container">
+    <div class="row mt-2">
+      <p>\n<script type="math/tex; mode=display">3^2</script>\n</p>
+      <div>\n<div class="MathJax_Preview">3^2</div>\n<script type="math/tex; mode=display">3^2</script>\n</div>
+      <p>A link <a href="https://google.com">https://google.com</a></p>
+      <p><span><span class="MathJax_Preview">3^2</span><script type="math/tex">3^2</script></span></p>
+    </div>
+</div>
+{% endblock content %}
