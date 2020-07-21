@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %}文章详情{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <!-- 展示文章的title -->
+        <h1 class="col-12 mt-4 mb-4">{{ article.title }}</h1>
+        <!-- 展示文章的author -->
+        <div class="col-12 alert alert-success">作者：{{ article.author }}</div>
+        <!-- 文章正文 -->
+        <div class="col-12">
+            <p>{{ article.body|safe }}</p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

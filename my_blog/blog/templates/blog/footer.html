@@ -1,0 +1,38 @@
+<div>
+    <br><br><br>
+</div>
+<!--
+<footer class="py-3 bg-dark fixed-bottom">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Jacob 2020 Powered by Django</p>
+          <script >function getnewYear(){var d = new Date();var old = new Date('2018/03/28');
+            var x = document.getElementById("year-info");
+            x.innerHTML=d.getFullYear();var y=document.getElementById("web-day");
+            var dd=Math.floor((d.getTime() - old.getTime()) / (24 * 3600 * 1000));
+            var d_str="| 网站已续航 "+dd+" 天";y.innerHTML=d_str;}getnewYear()
+          </script>
+    </div>
+</footer>
+-->
+
+  <footer id="footer" style="background-color:#000000;clear:both;text-align:center;">
+  <div class="text-white">
+
+    <div class="card-body text-center px-0 f-16">
+        <p class="card-text mb-1">Copyright&nbsp;&copy;&nbsp;<span id="year-info"></span>
+            <a href="https://github.com/JabinHao" target="_blank" title="博客作者的Github">JabinHao</a>.&nbsp;Powered&nbsp;by&nbsp;Django.
+        </p>
+        <p class="mb-0">
+            <a href="http://beian.miit.gov.cn/" target="_blank">{{ beian }}</a>&nbsp;|
+            <a href=" " target="_blank">Sitemap</a>
+            {% if cnzz_protocol %}|&nbsp;{{ cnzz_protocol|safe }}{% endif %}
+            <span id="web-day"></span>
+        </p>
+        <script>function getnewYear(){var d = new Date();var old = new Date('2020/07/28');
+            var x = document.getElementById("year-info");
+            x.innerHTML=d.getFullYear();var y=document.getElementById("web-day");
+            var dd=Math.floor((d.getTime() - old.getTime()) / (24 * 3600 * 1000));
+            var d_str="| 网站已续航 "+dd+" 天";y.innerHTML=d_str;}getnewYear()</script>
+    </div>
+    </div>
+</footer>

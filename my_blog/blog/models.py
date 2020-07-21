@@ -45,7 +45,7 @@ class Article(models.Model):
     tags = models.ManyToManyField(Tag, blank=True)
     views = models.IntegerField('阅览量', default=0)
 
-    author = models.ForeignKey(User, on_delete=models.CASCADE)   # 作者
+    author = models.ForeignKey(User, verbose_name='作者',on_delete=models.CASCADE)   # 作者
 
     class Meta:
         verbose_name = '文章'

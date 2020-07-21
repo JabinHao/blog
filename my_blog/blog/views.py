@@ -65,12 +65,13 @@ class DetailView(generic.DetailView):
         md = markdown.Markdown(extensions=[
             'markdown.extensions.extra',
             'markdown.extensions.codehilite',
+            'markdown.extensions.fenced_code',
             'mdx_math',
             TocExtension(slugify=slugify),
             ])
         obj.body = md.convert(obj.body)
-        obj.toc = md.toc
+        #obj.toc = md.toc
         return obj
 
 def test(request):
-    return render(request, 'transformation.html')
+    return render(request, 'blog/test.html')
