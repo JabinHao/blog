@@ -9,20 +9,9 @@
     <div>
       <ul class="navbar-nav">
         <!-- 条目 -->
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'blog:index' %}">文章列表</a>
-        </li>
-        <li><a class="nav-link" href="{% url 'blog:index' %}">文章列表</a>
-        </li>
-      </ul>
-    </div>
-
-    <div>
-      <ul class="navbar-nav">
-        <!-- 条目 -->
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'blog:test' %}">文章</a>
-        </li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'blog:index' %}">文章列表</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'blog:article_create' %}">写文章</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'blog:test' %}">测试页面</a></li>
       </ul>
     </div>
 

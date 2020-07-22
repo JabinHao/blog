@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Article, Category, Tag
+from .models import Article, Category, Tag, Carousel, FriendLink
 
 # Register your models here.
 
@@ -39,6 +39,15 @@ class TagAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'id')
 
+@admin.register(Carousel)
+class CarouselAdmin(admin.ModelAdmin):
+    list_display = ('number', 'title', 'content', 'img_url', 'url')
+
+@admin.register(FriendLink)
+class FriendLinkAdmin(admin.ModelAdmin):
+    list_display = ('name', 'description', 'link', 'create_date', 'is_active', 'is_show')
+    date_hierarchy = 'create_date'
+    list_filter = ('is_active', 'is_show')
 
 
 # 其他设置
@@ -46,4 +55,3 @@ class CategoryAdmin(admin.ModelAdmin):
 # 调整页面头部内容和标题
 admin.site.site_header = 'Jacob的网站后台管理系统'  # 此处设置页面显示标题
 admin.site.site_title = '博客后台'  # 此处设置页面头部标题
-

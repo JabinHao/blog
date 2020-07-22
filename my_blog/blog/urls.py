@@ -15,13 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import IndexView, DetailView, test
+from .views import IndexView, DetailView, ArticleCreateView, test
 # from .views import (IndexView, DetailView)#, DetailView, CategoryView, TagView, AboutView,
                     #SilianView, MySearchView, ArchiveView, TimelineView)
 
 app_name = 'blog'
 urlpatterns = [
     path('', IndexView.as_view(), name='index'),
+    path('blog/', IndexView.as_view(), name='index'),
     path('article/<slug:slug>/', DetailView.as_view(), name='detail'),  # 文章内容页
+    path('article-create/', ArticleCreateView.as_view(), name='article_create'), #新建文章
     path('test/',test,name='test'),
 ]

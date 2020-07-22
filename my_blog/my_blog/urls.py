@@ -16,7 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from django.contrib.sitemaps.views import sitemap
+from blog.sitemaps import ArticleSitemap, CategorySitemap, TagSitemap
+
+# 网站地图
+sitemaps = {
+    'articles': ArticleSitemap,
+    'tags': TagSitemap,
+    'categories': CategorySitemap
+}
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('blog.urls',namespace='blog')),
+    path('', include('blog.urls',namespace='blog')),#主页路由
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'), # 网站地图
 ]
